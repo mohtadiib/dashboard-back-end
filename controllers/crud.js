@@ -8,7 +8,7 @@ class Crud{
         try {
             const sqlQuery = `SELECT * FROM ${this.table}`;
             const data = await connection.execute(sqlQuery);
-            console.log(data.rows);
+            // console.log(data.rows);
             res.send(data.rows)
         }catch (err){
             console.error("error is: ",err)
@@ -91,5 +91,17 @@ class Crud{
             res.send("fetch data is error")
         }
     }
+
+    customQuery = async (req,res) => {
+        try {
+            const data = await connection.execute(req.body["query"]);
+            console.log(data.rows);
+            res.send(data.rows)
+        }catch (err){
+            console.error("error is: ",err)
+            res.send("fetch data is error")
+        }
+    }
+
 }
 export default Crud;

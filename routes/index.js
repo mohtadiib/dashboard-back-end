@@ -2,7 +2,7 @@ import express from "express";
 import Crud from "../controllers/crud.js";
 
 const router = express.Router()
-
+//mmm
 //1.PORTS
 const _ports = new Crud('PORTS')
 router.get('/ports',_ports.getAllData)
@@ -10,7 +10,7 @@ router.get('/ports',_ports.getAllData)
 
 //2.OPERATIONS
 const _operation = new Crud('operations')
-router.get('/operations',_operation.getAllData)
+router.post('/operations',_operation.customQuery)
 
 
 

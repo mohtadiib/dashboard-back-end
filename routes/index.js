@@ -2,7 +2,7 @@ import express from "express";
 import Crud from "../controllers/crud.js";
 
 const router = express.Router()
-//mmm
+
 //1.PORTS
 const _ports = new Crud('PORTS')
 router.get('/ports',_ports.getAllData)
@@ -12,12 +12,9 @@ router.get('/ports',_ports.getAllData)
 const _operation = new Crud('operations')
 router.post('/operations',_operation.customQuery)
 
-
-
 // router.get('/:id',getUserById)
 // router.post('/',createAmAlkhare)
 // router.patch('/:id',updateAmAlkhare)
 // router.delete('/:id',deleteAmAlkhare)
-//
 
 export default router

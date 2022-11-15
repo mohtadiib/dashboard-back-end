@@ -1,13 +1,5 @@
-import usersRouter from "./routes/index.js"
-import express from "express";
-import {allowCrossDomain} from "./config/config_header.js";
 import connection from "./config/database.js";
 
-// const app = express()
-// app.use(allowCrossDomain);
-//
-// app.use(express.json())
-// app.use('/users',usersRouter)
 async function fetch(){
     try {
         const sqlQuery = `SELECT * FROM USERS`;
